@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { BitFlyerService } from './services/bit-flyer.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(
+    private bitFlyerService: BitFlyerService,
+  )  {
+    this.bitFlyerService.getBoard();
+  }
+
 }
