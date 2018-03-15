@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BitFlyerService } from './services/bit-flyer.service';
 
+import 'rxjs/add/operator/map';
+
 @NgModule({
   declarations: [
     AppComponent

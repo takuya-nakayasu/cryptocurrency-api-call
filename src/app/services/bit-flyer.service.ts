@@ -12,10 +12,10 @@ export class BitFlyerService {
     private http: HttpClient,
   ) { }
 
-  getBoard = (): Observable<Object> => {
+  getBoard = (): Observable<String> => {
     return this.http
-    .get(`${this.bitFlyerUrl}${this.bitFlyerPath}`);
-    // .subscribe(console.log);
+    .get(`${this.bitFlyerUrl}${this.bitFlyerPath}`)
+    .map(response => JSON.stringify(response));
   }
 
 }
