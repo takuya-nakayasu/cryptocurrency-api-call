@@ -9,10 +9,11 @@ import { BitFlyerService } from './services/bit-flyer.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  value: Observable<Object>;
   constructor(
     private bitFlyerService: BitFlyerService,
   )  {
-    this.bitFlyerService.getBoard();
+    this.value = this.bitFlyerService.getBoard();
   }
 
 }
