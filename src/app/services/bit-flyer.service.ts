@@ -17,5 +17,4 @@ export class BitFlyerService {
     .get(`${this.bitFlyerUrl}${this.bitFlyerPath}`)
     .map(response => JSON.stringify(response));
   }
-
 }

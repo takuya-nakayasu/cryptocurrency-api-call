@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { BitFlyerService } from './services/bit-flyer.service';
@@ -8,11 +8,14 @@ import { BitFlyerService } from './services/bit-flyer.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   response: Observable<String>;
+
   constructor(
     private bitFlyerService: BitFlyerService,
-  )  {
+  )  {}
+
+  ngOnInit() {
     this.response = this.bitFlyerService.getBoard();
   }
 
