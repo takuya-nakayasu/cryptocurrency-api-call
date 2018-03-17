@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-
-import PubNub = require('pubnub');
+import { BitFlyerTicker } from '../model/bit-flyer-ticker';
 
 @Injectable()
 export class BitFlyerService {
@@ -10,18 +9,11 @@ export class BitFlyerService {
 
   bitFlyerUrl = 'https://api.bitflyer.jp';
   getBoardPath = '/v1/getboard';
+  getTickerPath = '/v1/getticker';
 
   constructor(
     private http: HttpClient,
-  ) {
-    this.pubnub = new PubNub({
-      subscribeKey: 'sub-c-52a9ab50-291b-11e5-baaa-0619f8945a4f'
-    });
-
-    this.pubnub.addListener({
-      message: message => console.log(message)
-    });
-  }
+  ) {}
 
   getBoard = (): Observable<string> => {
     return this.http
@@ -29,9 +21,9 @@ export class BitFlyerService {
     .map(response => JSON.stringify(response));
   }
 
-  getRealtimeTicker = (): void => {
-    this.pubnub.subscribe({
-      channels: ['lightning_ticker_BTC_JPY']
-    });
+  getTicker = (): Observable<BitFlyerTicker> => {
+    return this.http
+    .get(`${this.bitFlyerUrl}${this.getTickerPath}`)
+    .map(response => response as BitFlyerTicker);
   }
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BitFlyerService } from './services/bit-flyer.service';
 
 import 'rxjs/add/operator/map';
+import { CoincheckService } from './services/coincheck.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import 'rxjs/add/operator/map';
   ],
   providers: [
     BitFlyerService,
+    CoincheckService,
   ],
   bootstrap: [AppComponent]
 })

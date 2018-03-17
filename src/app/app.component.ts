@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { BitFlyerService } from './services/bit-flyer.service';
+import { BitFlyerTicker } from './model/bit-flyer-ticker';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,14 @@ import { BitFlyerService } from './services/bit-flyer.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  response: Observable<string>;
+  bitFlyer$: Observable<BitFlyerTicker>;
 
   constructor(
     private bitFlyerService: BitFlyerService,
   )  {}
 
   ngOnInit() {
-    // this.response = this.bitFlyerService.getBoard();
-    this.bitFlyerService.getRealtimeTicker();
+    this.bitFlyer$ = this.bitFlyerService.getTicker();
   }
 
 }
