@@ -9,14 +9,15 @@ import { BitFlyerService } from './services/bit-flyer.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  response: Observable<String>;
+  response: Observable<string>;
 
   constructor(
     private bitFlyerService: BitFlyerService,
   )  {}
 
   ngOnInit() {
-    this.response = this.bitFlyerService.getBoard();
+    // this.response = this.bitFlyerService.getBoard();
+    this.bitFlyerService.getRealtimeTicker();
   }
 
 }
