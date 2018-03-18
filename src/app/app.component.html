@@ -1,1 +1,3 @@
-<div>{{ (response$ | async).ltp }}</div>
+<!-- safe navigation operator(?.) -->
+<div>{{ (bitFlyer$ | async)?.ltp }}</div>
+<div>{{ (coincheck$ | async)?.last }}</div>
