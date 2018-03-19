@@ -7,9 +7,11 @@ import { BitflyerService } from './services/bitflyer.service';
 
 import { CoincheckService } from './services/coincheck.service';
 import { CriptoCurrencyActions } from '../state/action';
-import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
+
 import { IAppState, INITIAL_STATE } from '../state/store';
 import { rootReducer } from '../state/reducer';
+
+import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 
 import 'rxjs/add/operator/map';
 
