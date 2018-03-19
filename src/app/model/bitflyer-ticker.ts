@@ -1,4 +1,4 @@
-export interface BitFlyerTicker {
+export interface BitflyerTicker {
     best_ask: number;
     best_ask_size: number;
     best_bid: number;

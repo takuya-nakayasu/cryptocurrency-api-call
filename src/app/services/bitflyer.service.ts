@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { BitFlyerTicker } from '../model/bit-flyer-ticker';
+import { BitflyerTicker } from '../model/bitflyer-ticker';
 
 const URLS = {
   BASE: 'https://api.bitflyer.jp',
@@ -9,15 +9,15 @@ const URLS = {
 };
 
 @Injectable()
-export class BitFlyerService {
+export class BitflyerService {
 
   constructor(
     private http: HttpClient,
   ) {}
 
-  getTicker = (): Observable<BitFlyerTicker> =>
+  getTicker = (): Observable<BitflyerTicker> =>
     this.http
       .get(`${URLS.BASE}${URLS.TICKER}`)
-      .map(response => response as BitFlyerTicker)
+      .map(response => response as BitflyerTicker)
 
 }

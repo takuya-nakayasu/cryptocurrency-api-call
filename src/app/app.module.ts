@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BitFlyerService } from './services/bit-flyer.service';
+import { BitflyerService } from './services/bitflyer.service';
 
 import { CoincheckService } from './services/coincheck.service';
 import { CriptoCurrencyActions } from '../state/action';
@@ -23,7 +23,7 @@ import 'rxjs/add/operator/map';
     NgReduxModule,
   ],
   providers: [
-    BitFlyerService,
+    BitflyerService,
     CoincheckService,
     CriptoCurrencyActions,
   ],
