@@ -21,8 +21,7 @@ export class CoincheckService {
     this.http
       .get(`${URLS.BASE}${URLS.TICKER}`)
       .map(response => response as CoincheckTicker)
-      .subscribe(ticker => this.action.coincheckSetTicker(ticker))
-      .unsubscribe();
+      .subscribe(ticker => this.action.coincheckSetTicker(ticker));
   }
 
 }

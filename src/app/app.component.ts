@@ -5,6 +5,7 @@ import { BitflyerService } from './services/bitflyer.service';
 import { BitflyerTicker } from './model/bitflyer-ticker';
 import { CoincheckTicker } from './model/coincheck-ticker';
 import { CoincheckService } from './services/coincheck.service';
+import { select } from '@angular-redux/store';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,8 @@ import { CoincheckService } from './services/coincheck.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  bitflyer$: Observable<BitflyerTicker>;
-  coincheck$: Observable<CoincheckTicker>;
+  @select() readonly bitflyerTicker$: Observable<BitflyerTicker>;
+  @select() readonly coincheckTicker$: Observable<CoincheckTicker>;
 
   constructor(
     private bitflyerService: BitflyerService,

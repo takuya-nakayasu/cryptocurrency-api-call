@@ -21,8 +21,7 @@ export class BitflyerService {
     this.http
       .get(`${URLS.BASE}${URLS.TICKER}`)
       .map(response => response as BitflyerTicker)
-      .subscribe(ticker => this.action.bitflyerSetTicker(ticker))
-      .unsubscribe();
+      .subscribe(ticker => this.action.bitflyerSetTicker(ticker));
   }
 
 }
