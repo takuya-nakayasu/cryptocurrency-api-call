@@ -1,12 +1,12 @@
-import { BitflyerTicker } from '../../app/model/bitflyer-ticker';
-import { CoincheckTicker } from '../../app/model/coincheck-ticker';
+import { BitflyerTickerModel } from '../bitflyer-ticker/bitflyer-ticker.model';
+import { CoincheckTickerModel } from '../coincheck-ticker/coincheck-ticker.model';
 
 export interface IAppState {
-  bitflyerTicker: BitflyerTicker;
-  coincheckTicker: CoincheckTicker;
+  bitflyerTicker: BitflyerTickerModel;
+  CoincheckTickerModel: CoincheckTickerModel;
 }
 
 export const INITIAL_STATE: IAppState = {
   bitflyerTicker: null,
-  coincheckTicker: null,
+  CoincheckTickerModel: null,
 };

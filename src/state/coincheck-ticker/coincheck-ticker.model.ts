@@ -1,4 +1,4 @@
-export interface CoincheckTicker {
+export interface CoincheckTickerModel {
     last: number;
     bid: number;
     ask: number;

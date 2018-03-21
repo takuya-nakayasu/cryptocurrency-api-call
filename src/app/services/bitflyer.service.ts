@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { BitflyerTicker } from '../../state/bitflyer-ticker/bitflyer-ticker.model';
-import { CriptoCurrencyActions } from '../../state/action';
+import { BitflyerTickerModel } from '../../state/bitflyer-ticker/bitflyer-ticker.model';
+import { BitflyerTickerActions } from '../../state/bitflyer-ticker/bitflyer-ticker.action';
 
 const URLS = {
   BASE: 'https://api.bitflyer.jp',
@@ -14,14 +14,14 @@ export class BitflyerService {
 
   constructor(
     private http: HttpClient,
-    private action: CriptoCurrencyActions
+    private action: BitflyerTickerActions
   ) {}
 
   getTicker = (): void => {
     this.http
       .get(`${URLS.BASE}${URLS.TICKER}`)
-      .map(response => response as BitflyerTicker)
-      .subscribe(ticker => this.action.bitflyerSetTicker(ticker));
+      .map(response => response as BitflyerTickerModel)
+      .subscribe(ticker => this.action.setTicker(ticker));
   }
 
 }
