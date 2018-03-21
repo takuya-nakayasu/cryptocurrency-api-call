@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { BitflyerService } from './services/bitflyer.service';
 
 import { CoincheckService } from './services/coincheck.service';
-import { CriptoCurrencyActions } from '../state/action';
 
 import { IAppState, INITIAL_STATE } from '../state/root/store';
 import { rootReducer } from '../state/root/reducer';
 
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
+
+import { CoincheckTickerActions } from '../state/coincheck-ticker/coincheck-ticker.action';
+import { BitflyerTickerActions } from '../state/bitflyer-ticker/bitflyer-ticker.action';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -28,7 +30,8 @@ import 'rxjs/add/operator/catch';
   providers: [
     BitflyerService,
     CoincheckService,
-    CriptoCurrencyActions,
+    BitflyerTickerActions,
+    CoincheckTickerActions,
   ],
   bootstrap: [AppComponent]
 })

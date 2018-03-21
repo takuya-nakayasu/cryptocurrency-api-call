@@ -11,12 +11,12 @@ export function rootReducer(
     case BitflyerTickerActions.BITFLYER_SET_TICKER:
       return {
         bitflyerTicker: (action as BitflyerTickerAction).payload,
-        CoincheckTickerModel: lastState.CoincheckTickerModel
+        coincheckTicker: lastState.coincheckTicker
       };
     case CoincheckTickerActions.COINCHECK_SET_TICKER:
       return {
         bitflyerTicker: lastState.bitflyerTicker,
-        CoincheckTickerModel: (action as CoincheckTickerAction).payload
+        coincheckTicker: (action as CoincheckTickerAction).payload
       };
     default:
       return lastState;
