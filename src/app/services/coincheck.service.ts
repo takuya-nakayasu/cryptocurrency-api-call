@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CoincheckTicker } from '../model/coincheck-ticker';
+import { CoincheckTicker } from '../../state/coincheck-ticker/coincheck-ticker.model';
 import { Observable } from 'rxjs/Observable';
 import { CriptoCurrencyActions } from '../../state/action';
 

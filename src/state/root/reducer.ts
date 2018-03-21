@@ -1,6 +1,6 @@
 import { IAppState } from './store';
-import { Action } from 'redux';
-import { CriptoCurrencyActions, BitflyerTickerAction, CoincheckTickerAction } from './action';
+import { Action, combineReducers } from 'redux';
+import { CriptoCurrencyActions, BitflyerTickerAction, CoincheckTickerAction } from '../action';
 
 export function rootReducer(
     lastState: IAppState,

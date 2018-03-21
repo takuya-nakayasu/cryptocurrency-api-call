@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { BitflyerTicker } from '../model/bitflyer-ticker';
+import { BitflyerTicker } from '../../state/bitflyer-ticker/bitflyer-ticker.model';
 import { CriptoCurrencyActions } from '../../state/action';
 
 const URLS = {
