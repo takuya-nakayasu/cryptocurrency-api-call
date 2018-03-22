@@ -13,7 +13,7 @@ import { CoincheckTickerModel } from '../state/coincheck-ticker/coincheck-ticker
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @select() readonly bitflyerTicker$: Observable<BitflyerTickerModel>;
+  @select(['bitflyerTicker', 'ltp']) readonly bitflyerLtp$: Observable<number>;
   @select() readonly coincheckTicker$: Observable<CoincheckTickerModel>;
 
   constructor(
