@@ -1,8 +1,4 @@
 <!-- safe navigation operator(?.) -->
-<!-- <div>bitflyerのBTC価格:</div>
-<div>{{ (bitflyerTicker$ | async)?.ltp | currency: 'JPY': true: '0.0-0' }}</div>
-<div>coincheckのBTC価格:</div>
-<div>{{ (coincheckTicker$ | async)?.last | currency: 'JPY': true: '0.0-0' }}</div> -->
 <div>bitflyerのBTC価格:</div>
 <div>{{ (bitflyerTicker$ | async)?.ltp | number }}円</div>
 <div>coincheckのBTC価格:</div>
