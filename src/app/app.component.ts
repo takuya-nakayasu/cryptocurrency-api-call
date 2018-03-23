@@ -16,14 +16,12 @@ export class AppComponent implements OnInit {
   // 2層目のltpプロパティを参照
   @select(['bitflyerTicker', 'ltp']) readonly bitflyerLtp$: Observable<number>;
 
-  // 2層目のltpプロパティを参照
-  // プロパティ名と変数名が同じ場合は、selectorオプションを省略できる
-  @select('bitflyerTicker') readonly ltp$: Observable<number>;
-  // 1層目のCoincheckTickerModel型のオブジェクトを参照
+  // 1層目のcoincheckTickerプロパティを参照
   // プロパティ名と変数名が同じため、selectorオプションは省略されている
   @select() readonly coincheckTicker$: Observable<CoincheckTickerModel>;
 
-  @select(['coincheckTicker', 'timestamp']) readonly time$: Observable<CoincheckTickerModel>;
+  // 1層目のbitflyerTickerプロパティを参照
+  @select('bitflyerTicker') readonly ticker$: Observable<BitflyerTickerModel>;
 
   constructor(
     private bitflyerService: BitflyerService,

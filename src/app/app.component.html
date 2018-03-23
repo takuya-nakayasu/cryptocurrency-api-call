@@ -4,7 +4,6 @@
 <!-- <div>{{ bitflyerLtp$ | async| number }}円</div>
 <div>coincheckのBTC価格:</div>
 <div>{{ (coincheckTicker$ | async)?.last | number }}円</div> -->
-<div>@select(['bitflyerTicker', 'ltp']) readonly bitflyerLtp$:</div>
 <div>{{ bitflyerLtp$ | async | number }}円</div>
-<div>@select('bitflyerTicker') readonly ltp$:</div>
-<div>{{ ltp$ | async | number }}円</div>
+<div>{{ (coincheckTicker$ | async)?.timestamp | date  }}</div>
+<div>{{ (ticker$ | async)?.product_code }}</div>
