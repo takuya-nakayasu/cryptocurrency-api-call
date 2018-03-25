@@ -1,9 +1,3 @@
-<!-- safe navigation operator(?.) -->
-<!-- <div>bitflyerのBTC価格:</div> -->
-<!-- <div>{{ (bitflyerTicker$ | async)?.ltp | number }}円</div> -->
-<!-- <div>{{ bitflyerLtp$ | async| number }}円</div>
-<div>coincheckのBTC価格:</div>
-<div>{{ (coincheckTicker$ | async)?.last | number }}円</div> -->
 <div>{{ bitflyerLtp$ | async | number }}円</div>
-<div>{{ (coincheckTicker$ | async)?.timestamp | date  }}</div>
+<div>{{ (coincheckTicker$ | async)?.timestamp | date }}</div>
 <div>{{ (ticker$ | async)?.product_code }}</div>

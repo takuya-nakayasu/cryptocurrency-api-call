@@ -1,24 +1,9 @@
-import { IAppState } from './store';
-import { Action, combineReducers } from 'redux';
-import { BitflyerTickerActions, BitflyerTickerAction } from '../bitflyer-ticker/bitflyer-ticker.action';
-import { CoincheckTickerActions, CoincheckTickerAction } from '../coincheck-ticker/coincheck-ticker.action';
+import { IAppState } from "./store";
+import { combineReducers } from "redux";
+import { bitflyerTickerReducer } from "../bitflyer-ticker/bitflyer-ticker.reducer";
+import { coincheckTickerReducer } from "../coincheck-ticker/coincheck-ticker.reducer";
 
-export function rootReducer(
-    lastState: IAppState,
-    action: Action
-): IAppState {
-  switch (action.type) {
-    case BitflyerTickerActions.BITFLYER_SET_TICKER:
-      return {
-        bitflyerTicker: (action as BitflyerTickerAction).payload,
-        coincheckTicker: lastState.coincheckTicker
-      };
-    case CoincheckTickerActions.COINCHECK_SET_TICKER:
-      return {
-        bitflyerTicker: lastState.bitflyerTicker,
-        coincheckTicker: (action as CoincheckTickerAction).payload
-      };
-    default:
-      return lastState;
-  }
-}
+export const rootReducer = combineReducers<IAppState>({
+  bitflyerTicker: bitflyerTickerReducer,
+  coincheckTicker: coincheckTickerReducer
+});
