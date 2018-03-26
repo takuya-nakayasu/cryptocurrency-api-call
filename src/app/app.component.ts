@@ -6,6 +6,7 @@ import { CoincheckService } from './services/coincheck.service';
 import { select } from '@angular-redux/store';
 import { BitflyerTickerModel } from '../state/bitflyer-ticker/bitflyer-ticker.model';
 import { CoincheckTickerModel } from '../state/coincheck-ticker/coincheck-ticker.model';
+import { ZaifService } from './services/zaif.service';
 
 @Component({
   selector: 'app-root',
@@ -13,24 +14,22 @@ import { CoincheckTickerModel } from '../state/coincheck-ticker/coincheck-ticker
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  // 2層目のltpプロパティを参照
   @select(['bitflyerTicker', 'ltp'])
   readonly bitflyerLtp$: Observable<number>;
-
-  // 1層目のcoincheckTickerプロパティを参照
-  // プロパティ名と変数名が同じため、selectorオプションは省略されている
-  @select() readonly coincheckTicker$: Observable<CoincheckTickerModel>;
-
-  // 1層目のbitflyerTickerプロパティを参照
-  @select('bitflyerTicker') readonly ticker$: Observable<BitflyerTickerModel>;
+  @select(['coincheckTicker', 'last'])
+  readonly coincheckLast$: Observable<number>;
+  @select(['zaifTicker', 'last'])
+  readonly zaifLast$: Observable<number>;
 
   constructor(
     private bitflyerService: BitflyerService,
-    private coincheckService: CoincheckService
+    private coincheckService: CoincheckService,
+    private zaifService: ZaifService
   ) {}
 
   ngOnInit() {
     this.bitflyerService.getTicker();
     this.coincheckService.getTicker();
+    this.zaifService.getTicker();
   }
 }

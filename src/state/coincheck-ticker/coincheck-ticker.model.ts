@@ -4,5 +4,6 @@ export interface CoincheckTickerModel {
   ask: number;
   high: number;
   low: number;
-  volume: string;timestamp: number;
+  volume: string;
+  timestamp: number;
 }
