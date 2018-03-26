@@ -1,13 +1,13 @@
-import { Action, combineReducers } from "redux";
+import { Action, combineReducers } from 'redux';
 import {
   BitflyerTickerAction,
   BitflyerTickerActions
-} from "../bitflyer-ticker/bitflyer-ticker.action";
+} from '../bitflyer-ticker/bitflyer-ticker.action';
 import {
   CoincheckTickerAction,
   CoincheckTickerActions
-} from "../coincheck-ticker/coincheck-ticker.action";
-import { CoincheckTickerModel } from "./coincheck-ticker.model";
+} from '../coincheck-ticker/coincheck-ticker.action';
+import { CoincheckTickerModel } from './coincheck-ticker.model';
 
 export function coincheckTickerReducer(
   lastState: CoincheckTickerModel = null,

@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-import { BitflyerTickerModel } from "../../state/bitflyer-ticker/bitflyer-ticker.model";
-import { BitflyerTickerActions } from "../../state/bitflyer-ticker/bitflyer-ticker.action";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { BitflyerTickerModel } from '../../state/bitflyer-ticker/bitflyer-ticker.model';
+import { BitflyerTickerActions } from '../../state/bitflyer-ticker/bitflyer-ticker.action';
 
 const URLS = {
-  BASE: "https://api.bitflyer.jp",
-  TICKER: "/v1/getticker"
+  BASE: 'https://api.bitflyer.jp',
+  TICKER: '/v1/getticker'
 };
 
 @Injectable()

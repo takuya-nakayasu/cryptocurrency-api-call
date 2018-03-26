@@ -1,26 +1,26 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from "./app.component";
-import { BitflyerService } from "./services/bitflyer.service";
+import { AppComponent } from './app.component';
+import { BitflyerService } from './services/bitflyer.service';
 
-import { CoincheckService } from "./services/coincheck.service";
+import { CoincheckService } from './services/coincheck.service';
 
-import { IAppState, INITIAL_STATE } from "../state/root/store";
-import { rootReducer } from "../state/root/reducer";
+import { IAppState, INITIAL_STATE } from '../state/root/store';
+import { rootReducer } from '../state/root/reducer';
 
 import {
   NgReduxModule,
   NgRedux,
   DevToolsExtension
-} from "@angular-redux/store";
+} from '@angular-redux/store';
 
-import { CoincheckTickerActions } from "../state/coincheck-ticker/coincheck-ticker.action";
-import { BitflyerTickerActions } from "../state/bitflyer-ticker/bitflyer-ticker.action";
+import { CoincheckTickerActions } from '../state/coincheck-ticker/coincheck-ticker.action';
+import { BitflyerTickerActions } from '../state/bitflyer-ticker/bitflyer-ticker.action';
 
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/catch";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @NgModule({
   declarations: [AppComponent],
