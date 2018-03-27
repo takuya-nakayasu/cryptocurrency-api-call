@@ -7,6 +7,7 @@ import { select } from '@angular-redux/store';
 import { BitflyerTickerModel } from '../state/bitflyer-ticker/bitflyer-ticker.model';
 import { CoincheckTickerModel } from '../state/coincheck-ticker/coincheck-ticker.model';
 import { ZaifService } from './services/zaif.service';
+import { BitbankService } from './services/bitbank.service';
 
 @Component({
   selector: 'app-root',
@@ -20,16 +21,20 @@ export class AppComponent implements OnInit {
   readonly coincheckLast$: Observable<number>;
   @select(['zaifTicker', 'last'])
   readonly zaifLast$: Observable<number>;
+  @select(['bitbankTicker', 'last'])
+  readonly bitbankLast$: Observable<string>;
 
   constructor(
     private bitflyerService: BitflyerService,
     private coincheckService: CoincheckService,
-    private zaifService: ZaifService
+    private zaifService: ZaifService,
+    private bitbankService: BitbankService
   ) {}
 
   ngOnInit() {
     this.bitflyerService.getTicker();
     this.coincheckService.getTicker();
     this.zaifService.getTicker();
+    this.bitbankService.getTicker();
   }
 }

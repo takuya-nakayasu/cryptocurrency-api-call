@@ -23,6 +23,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { ZaifService } from './services/zaif.service';
 import { ZaifTickerActions } from '../state/zaif-ticker/zaif-ticker.action';
+import { BitbankService } from './services/bitbank.service';
+import { BitbankTickerActions } from '../state/bitbank-ticker/bitbank-ticker.action';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +33,8 @@ import { ZaifTickerActions } from '../state/zaif-ticker/zaif-ticker.action';
     BitflyerService,
     CoincheckService,
     ZaifService,
+    BitbankService,
+    BitbankTickerActions,
     BitflyerTickerActions,
     CoincheckTickerActions,
     ZaifTickerActions
