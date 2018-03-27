@@ -1,8 +1,4 @@
-import { Action, combineReducers } from 'redux';
-import {
-  BitflyerTickerAction,
-  BitflyerTickerActions
-} from '../bitflyer-ticker/bitflyer-ticker.action';
+import { Action } from 'redux';
 import {
   CoincheckTickerAction,
   CoincheckTickerActions

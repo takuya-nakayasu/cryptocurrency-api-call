@@ -8,6 +8,7 @@ import { BitflyerTickerModel } from '../state/bitflyer-ticker/bitflyer-ticker.mo
 import { CoincheckTickerModel } from '../state/coincheck-ticker/coincheck-ticker.model';
 import { ZaifService } from './services/zaif.service';
 import { BitbankService } from './services/bitbank.service';
+import { QuoinexService } from './services/quoinex.service';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +24,15 @@ export class AppComponent implements OnInit {
   readonly zaifLast$: Observable<number>;
   @select(['bitbankTicker', 'last'])
   readonly bitbankLast$: Observable<string>;
+  @select(['quoinexTicker', 'last_traded_price'])
+  readonly quoinexLast$: Observable<string>;
 
   constructor(
     private bitflyerService: BitflyerService,
     private coincheckService: CoincheckService,
     private zaifService: ZaifService,
-    private bitbankService: BitbankService
+    private bitbankService: BitbankService,
+    private quoinexService: QuoinexService
   ) {}
 
   ngOnInit() {
@@ -36,5 +40,6 @@ export class AppComponent implements OnInit {
     this.coincheckService.getTicker();
     this.zaifService.getTicker();
     this.bitbankService.getTicker();
+    this.quoinexService.getTicker();
   }
 }

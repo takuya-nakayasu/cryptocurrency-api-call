@@ -25,6 +25,8 @@ import { ZaifService } from './services/zaif.service';
 import { ZaifTickerActions } from '../state/zaif-ticker/zaif-ticker.action';
 import { BitbankService } from './services/bitbank.service';
 import { BitbankTickerActions } from '../state/bitbank-ticker/bitbank-ticker.action';
+import { QuoinexService } from './services/quoinex.service';
+import { QuoinexTickerActions } from '../state/quoinex-ticker/quoinex-ticker.action';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,9 +36,11 @@ import { BitbankTickerActions } from '../state/bitbank-ticker/bitbank-ticker.act
     CoincheckService,
     ZaifService,
     BitbankService,
+    QuoinexService,
     BitbankTickerActions,
     BitflyerTickerActions,
     CoincheckTickerActions,
+    QuoinexTickerActions,
     ZaifTickerActions
   ],
   bootstrap: [AppComponent]
