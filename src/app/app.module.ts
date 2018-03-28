@@ -27,10 +27,20 @@ import { BitbankService } from './services/bitbank.service';
 import { BitbankTickerActions } from '../state/bitbank-ticker/bitbank-ticker.action';
 import { QuoinexService } from './services/quoinex.service';
 import { QuoinexTickerActions } from '../state/quoinex-ticker/quoinex-ticker.action';
+// add this!
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, NgReduxModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    NgReduxModule,
+    // add this!
+    BrowserAnimationsModule,
+    MatTableModule
+  ],
   providers: [
     BitflyerService,
     CoincheckService,
