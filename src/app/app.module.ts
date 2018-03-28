@@ -21,6 +21,7 @@ import { BitflyerTickerActions } from '../state/bitflyer-ticker/bitflyer-ticker.
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/combineLatest';
 import { ZaifService } from './services/zaif.service';
 import { ZaifTickerActions } from '../state/zaif-ticker/zaif-ticker.action';
 import { BitbankService } from './services/bitbank.service';
