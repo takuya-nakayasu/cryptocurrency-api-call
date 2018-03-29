@@ -10,15 +10,15 @@
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
-    <ng-container matColumnDef="exchange">
+    <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef> 取引所 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.exchange}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="price">
+    <ng-container matColumnDef="btcPrice">
       <mat-header-cell *matHeaderCellDef> BTC価格 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.btcPrice}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

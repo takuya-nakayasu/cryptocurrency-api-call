@@ -13,27 +13,14 @@ import { ExchangeListService } from './services/exchange-list.service';
 import { Subscription } from 'rxjs/Subscription';
 import { ExchangeModel } from '../state/exchange-list/exchange-list.model';
 
-export interface Element {
-  exchange: string;
-  price: number;
-}
-
-const ELEMENT_DATA: Element[] = [
-  { exchange: 'ビットフライヤー', price: undefined },
-  { exchange: 'ビットフライヤー', price: undefined },
-  { exchange: 'ビットフライヤー', price: undefined },
-  { exchange: 'ビットフライヤー', price: undefined },
-  { exchange: 'ビットフライヤー', price: undefined }
-];
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  displayedColumns = ['exchange', 'price'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns = ['name', 'btcPrice'];
+  dataSource: ExchangeModel[];
   subscription: Subscription;
 
   @select(['bitflyerTicker', 'ltp'])
@@ -91,8 +78,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.exchangeList$
       .filter(value => !!value)
-      // .filter(value => value.length === 5)
-      .subscribe(console.log);
+      .filter(value => value.length === 5)
+      .subscribe(value => (this.dataSource = value));
   }
 
   ngOnDestroy() {
