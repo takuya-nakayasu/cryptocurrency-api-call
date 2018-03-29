@@ -21,16 +21,20 @@ import { BitflyerTickerActions } from '../state/bitflyer-ticker/bitflyer-ticker.
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/filter';
 import 'rxjs/add/observable/combineLatest';
+
 import { ZaifService } from './services/zaif.service';
 import { ZaifTickerActions } from '../state/zaif-ticker/zaif-ticker.action';
 import { BitbankService } from './services/bitbank.service';
 import { BitbankTickerActions } from '../state/bitbank-ticker/bitbank-ticker.action';
 import { QuoinexService } from './services/quoinex.service';
 import { QuoinexTickerActions } from '../state/quoinex-ticker/quoinex-ticker.action';
-// add this!
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { ExchangeListService } from './services/exchange-list.service';
+import { ExchangeListActions } from '../state/exchange-list/exchange-list.action';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,19 +42,20 @@ import { MatTableModule } from '@angular/material/table';
     BrowserModule,
     HttpClientModule,
     NgReduxModule,
-    // add this!
     BrowserAnimationsModule,
     MatTableModule
   ],
   providers: [
     BitflyerService,
     CoincheckService,
+    ExchangeListService,
     ZaifService,
     BitbankService,
     QuoinexService,
     BitbankTickerActions,
     BitflyerTickerActions,
     CoincheckTickerActions,
+    ExchangeListActions,
     QuoinexTickerActions,
     ZaifTickerActions
   ],
