@@ -10,7 +10,7 @@
     <!-- BTC Price Column -->
     <ng-container matColumnDef="btcPrice">
       <mat-header-cell *matHeaderCellDef> BTC価格 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.btcPrice | number}}円 </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.btcPrice | number: '0.0-0'}}円 </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
