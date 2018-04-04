@@ -14,8 +14,7 @@ export class QuoinexService {
 
   getTicker = (): void => {
     this.http
-      .get(`${URLS.BASE}${URLS.TICKER}`)
-      .map(response => response as QuoinexTickerModel)
+      .get<QuoinexTickerModel>(`${URLS.BASE}${URLS.TICKER}`)
       .subscribe(ticker => this.action.setTicker(ticker));
   };
 }

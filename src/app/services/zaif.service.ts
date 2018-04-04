@@ -14,8 +14,7 @@ export class ZaifService {
 
   getTicker = (): void => {
     this.http
-      .get(`${URLS.BASE}${URLS.TICKER}`)
-      .map(response => response as ZaifTickerModel)
+      .get<ZaifTickerModel>(`${URLS.BASE}${URLS.TICKER}`)
       .subscribe(ticker => this.action.setTicker(ticker));
   };
 }

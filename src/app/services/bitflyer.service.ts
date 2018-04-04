@@ -17,9 +17,9 @@ export class BitflyerService {
   ) {}
 
   getTicker = (): void => {
+    // getメソッドの型パラメータでレスポンスの型を指定
     this.http
-      .get(`${URLS.BASE}${URLS.TICKER}`)
-      .map(response => response as BitflyerTickerModel)
+      .get<BitflyerTickerModel>(`${URLS.BASE}${URLS.TICKER}`)
       .subscribe(ticker => this.action.setTicker(ticker));
   };
 }

@@ -14,8 +14,7 @@ export class BitbankService {
 
   getTicker = (): void => {
     this.http
-      .get(`${URLS.BASE}${URLS.TICKER}`)
-      .map(response => response as BitbankTickerResponse)
+      .get<BitbankTickerResponse>(`${URLS.BASE}${URLS.TICKER}`)
       .subscribe(response => this.action.setTicker(response.data));
   };
 }
