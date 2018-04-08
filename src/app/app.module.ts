@@ -37,11 +37,15 @@ import { MatTableModule } from '@angular/material/table';
 import { ExchangeListService } from './services/exchange-list.service';
 import { ExchangeListActions } from '../state/exchange-list/exchange-list.action';
 import { ExchangeListComponent } from './exchange-list/exchange-list.component';
+import { PrivateComponent } from './private/private.component';
 
-const myRoutes = [{ path: '', component: ExchangeListComponent }];
+const myRoutes = [
+  { path: 'private', component: PrivateComponent },
+  { path: '', component: ExchangeListComponent }
+];
 
 @NgModule({
-  declarations: [AppComponent, ExchangeListComponent],
+  declarations: [AppComponent, ExchangeListComponent, PrivateComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
