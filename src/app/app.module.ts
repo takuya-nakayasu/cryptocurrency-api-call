@@ -35,9 +35,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { ExchangeListService } from './services/exchange-list.service';
 import { ExchangeListActions } from '../state/exchange-list/exchange-list.action';
+import { ExchangeListComponent } from './exchange-list/exchange-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ExchangeListComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

@@ -1,0 +1,19 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Exchange Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> 取引所 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- BTC Price Column -->
+    <ng-container matColumnDef="btcPrice">
+      <mat-header-cell *matHeaderCellDef> BTC価格 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.btcPrice | number: '0.0-0'}}円 </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
