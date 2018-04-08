@@ -34,6 +34,7 @@ import { QuoinexTickerActions } from '../state/quoinex-ticker/quoinex-ticker.act
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 import { ExchangeListService } from './services/exchange-list.service';
 import { ExchangeListActions } from '../state/exchange-list/exchange-list.action';
 import { ExchangeListComponent } from './exchange-list/exchange-list.component';
@@ -48,6 +49,7 @@ import { myRoutes } from './app.routes';
     HttpClientModule,
     NgReduxModule,
     BrowserAnimationsModule,
+    MatCardModule,
     MatTableModule,
     RouterModule.forRoot(myRoutes)
   ],
