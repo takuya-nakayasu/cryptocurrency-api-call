@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BitflyerService } from './services/bitflyer.service';
@@ -37,6 +38,8 @@ import { ExchangeListService } from './services/exchange-list.service';
 import { ExchangeListActions } from '../state/exchange-list/exchange-list.action';
 import { ExchangeListComponent } from './exchange-list/exchange-list.component';
 
+const myRoutes = [{ path: '', component: ExchangeListComponent }];
+
 @NgModule({
   declarations: [AppComponent, ExchangeListComponent],
   imports: [
@@ -44,7 +47,8 @@ import { ExchangeListComponent } from './exchange-list/exchange-list.component';
     HttpClientModule,
     NgReduxModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    RouterModule.forRoot(myRoutes)
   ],
   providers: [
     BitflyerService,
