@@ -11,7 +11,12 @@ export interface PrivateAPIKeySet {
   styleUrls: ['./private.component.scss']
 })
 export class PrivateComponent implements OnInit {
+  keySet: PrivateAPIKeySet;
   constructor() {}
 
   ngOnInit() {}
+
+  onSubmit() {
+    console.log('submit');
+  }
 }
