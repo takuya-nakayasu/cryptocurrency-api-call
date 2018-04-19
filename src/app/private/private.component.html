@@ -9,7 +9,9 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input type="password" matInput placeholder="API Secret" id="secret" [(ngModel)]="keySet.secret" name="secret" required>
+        <input [type]="hide ? 'password' : 'text'" matInput placeholder="API Secret" id="secret" [(ngModel)]="keySet.secret" name="secret"
+          required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
       </mat-form-field>
       <button type="submit" mat-raised-button color="primary">Login</button>
     </form>

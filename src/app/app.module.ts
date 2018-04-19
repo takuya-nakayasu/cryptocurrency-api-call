@@ -41,6 +41,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 import { ExchangeListService } from './services/exchange-list.service';
 import { ExchangeListActions } from '../state/exchange-list/exchange-list.action';
@@ -62,6 +63,7 @@ import { myRoutes } from './app.routes';
     MatInputModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatIconModule,
     FormsModule,
     RouterModule.forRoot(myRoutes)
   ],

@@ -11,6 +11,7 @@ export class PrivateAPIKeySet {
 })
 export class PrivateComponent implements OnInit {
   keySet = new PrivateAPIKeySet('', '');
+  hide = true;
   constructor() {}
 
   ngOnInit() {}
