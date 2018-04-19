@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 export class PrivateAPIKeySet {
   constructor(public key: string, public secret: string) {}
