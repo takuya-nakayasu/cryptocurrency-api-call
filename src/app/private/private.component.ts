@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PrivateAPIKeySet {
-  key: string;
-  secret: string;
+export class PrivateAPIKeySet {
+  constructor(public key: string, public secret: string) {}
 }
 
 @Component({
@@ -11,12 +10,12 @@ export interface PrivateAPIKeySet {
   styleUrls: ['./private.component.scss']
 })
 export class PrivateComponent implements OnInit {
-  keySet: PrivateAPIKeySet;
+  keySet = new PrivateAPIKeySet('', '');
   constructor() {}
 
   ngOnInit() {}
 
   onSubmit() {
-    console.log('submit');
+    console.log(this.keySet);
   }
 }
