@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { BitflyerService } from '../services/bitflyer.service';
 
 export class PrivateAPIKeySet {
   constructor(public key: string, public secret: string) {}
@@ -13,11 +14,11 @@ export class PrivateAPIKeySet {
 export class PrivateComponent implements OnInit {
   keySet = new PrivateAPIKeySet('', '');
   hide = true;
-  constructor() {}
+  constructor(private bitflyerService: BitflyerService) {}
 
   ngOnInit() {}
 
   onSubmit() {
-    console.log(this.keySet);
+    this.bitflyerService.getBalance(this.keySet);
   }
 }
