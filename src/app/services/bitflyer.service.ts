@@ -29,17 +29,19 @@ export class BitflyerService {
   getBalance = (keySet: PrivateAPIKeySet): void => {
     const timestamp = Date.now().toString();
     const method = 'GET';
+    // ACCESS-TIMESTAMP, HTTP メソッド, リクエストのパス,
+    // リクエストボディ を文字列として連結したもの
     const text = timestamp + method + URLS.GET_BALANCE;
-    // const crypto = require('crypto');
-    console.log(`crypto: ${crypto}`);
-    console.log(crypto.HmacSHA256(text, keySet.secret));
+
+    // HMAC-SHA-256で署名を作成する
+    // keySet.secretはAPI secret
     const hmac = crypto.HmacSHA256(text, keySet.secret);
+    // 署名をHEXでエンコード
     const sign = crypto.enc.Hex.stringify(hmac);
-    console.log(crypto.enc.Hex.stringify(hmac));
-    console.log(`sign:${sign}`);
 
     const httpOptions = {
       headers: new HttpHeaders({
+        // keySet.keyはAPIキー
         'ACCESS-KEY': keySet.key,
         'ACCESS-TIMESTAMP': timestamp,
         'ACCESS-SIGN': sign
